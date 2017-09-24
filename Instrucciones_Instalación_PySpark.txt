@@ -1,4 +1,4 @@
-#El presente fichero muestro los pasos a seguir para instalar PySpark con ipython como interprete para 
+#El presente fichero se describen los pasos a seguir para instalar PySpark con ipython como interprete para 
 #un sistema linux ubuntu-64bit
 
 #PASO 1: En caso de no tener instalado JAVA lo instalamos
@@ -6,7 +6,7 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
 
-#PASO 2: Verificar versión de java instalada
+#PASO 2: Verificar versiÃ³n de java instalada
 java -version
 
 #PASO 3: Instalamos el interprete ipython 
@@ -15,32 +15,31 @@ sudo pip install ipython
 #PASO 4: Instalamos py4j
 sudo pip install py4j
 
-#PASO 5: Descargamos desde la web oficial de apache-spark la última versión y la descomprimimos en el 
+#PASO 5: Descargamos desde la web oficial de apache-spark la Ãºltima versiÃ³n y la descomprimimos en el 
 #directorio donde deseamos instalarlo.
 
 #PASO 6: Entramos dentro de la carpeta /spark-2.2.0-bin-hadoop2.7 y corremos un ejemplo para ver si 
 #spark funciona de forma adecuada
 ./bin/run-example SparkPi 10
-Si todo funciona de forma adecuada debería de aparacer: Pi is roughly 3.143111143111143
+Si todo funciona de forma adecuada deberÃ­a de aparacer: Pi is roughly 3.143111143111143
 
 #PASO7: Ejecutamos los siguientes comandos
 sudo mv ~/home/francisco/spark-2.2.0-bin-hadoop2.7 /opt/
 sudo ln -s /opt/spark-2.2.0-bin-hadoop2.7 /opt/spark
 
-#PASO 8: Indicamos a PySpark que se inicie con ipython para ello accedemos al fichero bashrc y al final
-#escribimos los 3 comandos export.
+#PASO 8: Indicamos a PySpark que se inicie con ipython para ello accedemos al fichero bashrc
 nano ~/.bashrc
-export SPARK_HOME=/srv/spark
- 
-export PATH=$SPARK_HOME/bin:$PATH
 
+#PASO 9: Realizamos los siguientes export 
+export SPARK_HOME=/srv/spark
+export PATH=$SPARK_HOME/bin:$PATH
 export PYSPARK_PYTHON=ipython
 
-#Reseteamos el bash para que se tomen los cambios
+#PASO 10: Reseteamos el bash para que se tomen los cambios
  . ~/.bashrc
 
-#Tras realizar estos pasos si ejecutamos el comando pyspark debería funcionar correctamente y lanzar
-#Spark con ipython
+#Tras realizar estos pasos si ejecutamos el comando pyspark deberÃ­a funcionar correctamente y lanzar
+#Spark con ipython, para ello ejecutar el siguiente comando:
 pyspark
 
 
