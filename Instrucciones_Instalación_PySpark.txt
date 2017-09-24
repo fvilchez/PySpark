@@ -1,4 +1,4 @@
-#El presente fichero se describen los pasos a seguir para instalar PySpark con ipython como interprete para 
+#El presente fichero se describen los pasos a seguir para instalar PySpark con ipython como intérprete para 
 #un sistema linux ubuntu-64bit
 
 #PASO 1: En caso de no tener instalado JAVA lo instalamos
